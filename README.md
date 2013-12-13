@@ -1,4 +1,3 @@
-pizzavicenza
-============
+Sycamore
 
-Pizza Vicenza BaseKit Template
+=====
