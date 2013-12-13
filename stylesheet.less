@@ -483,17 +483,17 @@ header {
                             -moz-border-radius: 100px;
                             border-radius: 100px;
                             background-repeat: no-repeat;
-                            background-size: 13px;
+                            background-size: 19px;
                             background-position: center;
                             display: inline-block;
                         }
 
                         .vegetarian-icon {
-                            background-image: image('/images/veggie.png');
+                            background-image: image('/images/v.png');
                         }
 
                         .glutenFree-icon {
-                            background-image: image('/images/nuts.png');
+                            background-image: image('/images/gf.png');
                         }
                         
                     } /* end menu-section-item-dietary-props */
@@ -543,16 +543,16 @@ footer {
   margin-top: 2em;
 
     .menu-info {
-        border: 3px solid lighten(@color-swatch2,5%);
-        padding: 1em;
         width: 100%;
         display: inline-block;
         text-align: center;
+        margin-bottom: 2em;
 
 
         p { /* menu-note */
           float: left;
           width: 100%;
+          color: @color-swatch7;
         }
 
         dl { /* menu-dietary-key */
@@ -565,7 +565,7 @@ footer {
                 display: inline-block;
             }
 
-            dt {
+            dt { /* dietary-icon */
                 vertical-align: top; 
                 background-color: lighten(@color-swatch6,10%);
                 width: 25px;
@@ -587,12 +587,12 @@ footer {
                 background-image: image('/images/nuts.png');
             }
 
-            dd {
+            dd { /* text for icon */
                 font-family:@font-swatch5-font-family;
                 font-size:@font-swatch5-font-size;
                 font-weight: @font-swatch5-font-weight;
                 line-height:@font-swatch5-line-height;
-                color:@font-swatch5-color;
+                color: @color-swatch7; 
                 letter-spacing: @font-swatch5-letter-spacing;
                 margin: 0 5px -7px;
             } /* end dd */
@@ -604,10 +604,11 @@ footer {
 
     .widget.content {
         width: 100%;
-        padding: 1em;
         text-align: center;
-        border: 3px solid lighten(@color-swatch2,5%);
-        margin-top: -7px;
+
+        p {
+          color: @color-swatch7;
+        }
     }
 
 } /* end footer */
@@ -621,14 +622,16 @@ footer {
 
 .back-to-top {
   text-align: center;
+  height: 66px;
 
     a {
-        font-family:@font-swatch3-font-family;
-        font-size:@font-swatch3-font-size;
-        font-weight: @font-swatch3-font-weight;
-        line-height:@font-swatch3-line-height;
-        color:@color-swatch3;
-        letter-spacing: @font-swatch3-letter-spacing;
+        background-image: image('/images/back-to-top.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 66px;
+        text-indent: -2000px;
+        display: block;
+
     }
 
 } /*end back-to-top */
@@ -671,6 +674,25 @@ footer {
   color: @font-swatch6-color;
   line-height:@font-swatch6-line-height;
   letter-spacing: @font-swatch6-letter-spacing;
+}
+
+.navigation ul li a:after {
+content: "●";
+font-size: 0.8em;
+padding-left: 8px;
+position: absolute;
+bottom: 0.4em;
+color: @color-swatch5;
+}
+
+.navigation ul li:last-child a:after {
+content: "";
+}
+
+    @media only screen and (max-width: 1200px) {
+    .navigation ul li a:after {
+    content: "";
+    }
 }
 
 .navigation ul li a:hover {
@@ -938,7 +960,7 @@ footer {
     display: none;
     padding: 2em 0 0;
     margin-bottom: 3em;
-    border-bottom: 1px dotted lighten(@color-swatch5,50%);
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
   }
 
   .widget .extendednavigation li {
@@ -946,9 +968,6 @@ footer {
     padding: 0;
   }
 
-  .widget.extendednavigation ul li {
-    border-bottom: 1px dotted lighten(@color-swatch5,50%);
-  }
 
     .widget.extendednavigation ul li:last-child {
     border-bottom: none;
