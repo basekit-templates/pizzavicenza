@@ -279,11 +279,10 @@ header {
             text-align: center;
 
 
-            h1 { /* menu-name */
+            .menu-name-background { 
                     width: 20%;
                     position: relative;
                     background-color: @color-swatch3;
-                    color: @color-swatch7;
                     text-align: center;
                     padding: 0.5em; 
                     margin: 2em auto 2em;
@@ -301,29 +300,32 @@ header {
                      content: "";
                      position: absolute;
                      display: block;
-                     bottom: -0.5em;
-                     border: 1.2em solid darken(@color-swatch3,10%);
+                     bottom: -0.7em;
+                     border: 1.4em solid darken(@color-swatch3,5%);
                      z-index: -1;
                         }
                 &:before {
-                    left: -1.5em;
-                    border-right-width: 1.2em;
+                    left: -1.8em;
+                    border-right-width: 1.5em;
                     border-left-color: transparent;
                     }
                 &:after {
-                    right: -1.5em;
-                    border-left-width: 1.2em;
+                    right: -1.8em;
+                    border-left-width: 1.5em;
                     border-right-color: transparent;
                     }
 
-                .menu-name {
+                h1 { /* menu-name */
+
+                    color: @color-swatch7;
+                    padding: 0;
 
                     &:before, &:after {
                      content: "";
                      position: absolute;
                      display: block;
                      border-style: solid;
-                     border-color: darken(@color-swatch3,55%) transparent transparent transparent;
+                     border-color: darken(@color-swatch3,20%) transparent transparent transparent;
                      bottom: -0.5em;
                         }
 
@@ -336,15 +338,72 @@ header {
                      right: 0;
                      border-width: 0.5em 0.8em 0 0;
                         }
-                }        
+                } /*end h1*/       
 
-            } /*end h1*/
+            } /*end menu-name-background */
 
-            h2 { /* menu-section-name */
-                background-image: image('/images/subsection-texture.png');
-                background-repeat: repeat-x;
-                padding-top: 3px;
-            }
+            .menu-section-background { 
+                    width: 50%;
+                    position: relative;
+                    background-color: darken(@color-swatch1,10%);
+                    text-align: center;
+                    padding: 0.5em; 
+                    margin: 2em auto 2em;
+
+                    @media @tablet {
+                    margin: 0 auto 2em;
+                    width: 50%;
+                    }
+
+                    @media @mobile { 
+                    width: 80%;
+                    }
+                
+                &:before, &:after {
+                     content: "";
+                     position: absolute;
+                     display: block;
+                     bottom: -0.7em;
+                     border: 1.4em solid darken(@color-swatch1,15%);
+                     z-index: -1;
+                        }
+                &:before {
+                    left: -1.8em;
+                    border-right-width: 1.5em;
+                    border-left-color: transparent;
+                    }
+                &:after {
+                    right: -1.8em;
+                    border-left-width: 1.5em;
+                    border-right-color: transparent;
+                    }
+
+                h2 { /* menu-section-name */
+
+                    color: @color-swatch7;
+                    padding: 0;
+
+                    &:before, &:after {
+                     content: "";
+                     position: absolute;
+                     display: block;
+                     border-style: solid;
+                     border-color: darken(@color-swatch1,25%) transparent transparent transparent;
+                     bottom: -0.5em;
+                        }
+
+                    &:before {
+                     left: 0;
+                     border-width: 0.5em 0 0 0.8em;                         
+                        }
+
+                    &:after {
+                     right: 0;
+                     border-width: 0.5em 0.8em 0 0;
+                        }
+                } /*end h2*/       
+
+            } /*end menu-name-background */
 
             p { /* menu-availability, menu-description and menu-section-description */
                 padding: 10px 0; 
@@ -579,7 +638,7 @@ header {
                 font-size:@font-swatch5-font-size;
                 font-weight: @font-swatch5-font-weight;
                 line-height:@font-swatch5-line-height;
-                color: @color-swatch7; 
+                color: @font-swatch5-color;
                 letter-spacing: @font-swatch5-letter-spacing;
                 margin: 0 5px -7px;
             } /* end dd */
