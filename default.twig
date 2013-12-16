@@ -58,8 +58,9 @@
 
     <div class="main wrapper clearfix">
         <div class="menu-header">
-            <h1 class="menu-name">{{ menu.name }}</h1>
-
+            <div class="menu-name-background"> <!-- Marta added this div to add background images to menu names -->
+                <h1 class="menu-name">{{ menu.name }}</h1>
+            </div>
             {% if menu.description is not null %}
                 <p class="menu-description">{{ menu.description }}</p>
             {% endif %}
@@ -73,7 +74,7 @@
             <ol class="menu-items">
                 {% for item in menu.items %}
                 <li class="menu-item{% if item.promoted %} menu-item-promoted{% endif %}">
-                    <div class="inner-item">
+                    <div class="inner-item"><!-- Marta added this div -->
                         <h3 class="menu-item-name">{{ item.name }}</h3>
 
                        <!--{% if item.imageURL is not null %}
@@ -129,7 +130,9 @@
                     <li class="menu-section sub-section-promoted">
                         {% if section.parentRef is null %}
                             <div class="menu-section-header">
-                                <h2 class="menu-section-name">{{ section.name }}</h2>
+                                <div class="menu-section-background"><!-- Marta added this div to add background images to menu names -->
+                                    <h2 class="menu-section-name">{{ section.name }}</h2>
+                                </div>
                                 {% if section.availability is not null %}
                                     <p class="menu-section-availability">{{ section.availability }}</p>
                                 {% endif %}
@@ -275,9 +278,9 @@
 
         {% if menu.note is not null %}
 
-         <div class="back-to-top"><a href="#top">Back to top^</a></div>
+         <div class="back-to-top"><a href="#top">Back to top^</a></div><!-- Marta added this div -->
 
-        <div class="menu-info">
+        <div class="menu-info"><!-- Marta added this div -->
             <p class="menu-note">{{ menu.note }}</p>
         {% endif %}
         {% if menu.dietaryInfoKeys|length %}
