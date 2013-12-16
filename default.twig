@@ -125,7 +125,8 @@
         {% if menu.sections|length %}
             <ol class="menu-sections">
                 {% for section in menu.sections %}
-                    <li class="menu-section">
+                <!-- BEGIN have two lis for styling as the data now just has one li -->
+                    <li class="menu-section sub-section-promoted">
                         {% if section.parentRef is null %}
                             <div class="menu-section-header">
                                 <h2 class="menu-section-name">{{ section.name }}</h2>
@@ -144,6 +145,77 @@
                             </ol>
                         {% endif %}
 
+                        {% if section.items|length %}
+                            <ol class="menu-section-items">
+                                {% for item in section.items %}
+                                    <li class="menu-section-item{% if item.promoted %} menu-item-promoted{% endif %}">
+                                        <div class="inner-item">
+                                        <h3 class="menu-section-item-name">{{ item.name }}</h3>
+                                        {% if item.prices|length %}
+                                            <ol class="menu-section-item-prices">
+                                                {% for price in item.prices %}
+                                                    <li class="menu-section-item-price">
+                                                        {% if price.name == '' %}
+                                                            <p class="standard-price">{{ price.price }}</p>
+                                                        {% else %}
+                                                            <p class="variant-price">{{ price.name }} {{ price.price }}</p>
+                                                        {% endif %}
+                                                    </li>
+                                                {% endfor %}
+                                            </ol>
+                                        {% endif %}
+
+                                        {% if item.imageURL is not null %}
+                                            <img class="menu-section-item-image" alt="" src="{{ item.imageURL }}">
+                                        {% endif %}
+
+                                        {% if item.description is not null %}
+                                            <p class="menu-section-item-description">{{ item.description }}</p>
+                                        {% endif %}
+
+                                        {% if item.nutritionalProperties|length %}
+                                            <h4 class="menu-section-item-nutritional-title">Nutritional information</h4>
+                                            <ul class="menu-section-item-nutritional-props">
+                                                {% for prop in item.nutritionalProperties %}
+                                                    <li class="menu-section-item-nutritional-prop"><p>{{ prop }}</p></li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+
+                                        {% if item.dietaryInfo|length %}
+                                            <div class="menu-section-item-dietary-props">
+                                                {% for key, value in item.dietaryInfo %}
+                                                    {% if value == 1 %}
+                                                        <span class="{{ key }}-icon dietary-icon"></span>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                        {% endif %}
+                                    </div><!--end inner-item-->
+                                    </li>
+                                {% endfor %}
+                            </ol>
+                        {% endif %}
+                    </li>
+                <!-- END have two lis for styling as the data now just has one li -->
+                    <li class="menu-section">
+                        {% if section.parentRef is null %}
+                            <div class="menu-section-header">
+                                <h2 class="menu-section-name">{{ section.name }}</h2>
+                                {% if section.availability is not null %}
+                                    <p class="menu-section-availability">{{ section.availability }}</p>
+                                {% endif %}
+                                {% if section.description is not null %}
+                                    <p class="menu-section-description">{{ section.description }}</p>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+
+                        {% if section.sections|length %}
+                            <ol class="menu-sub-sections">
+                                {% include 'menu_subsection.twig' with {'sections': section.sections} %}
+                            </ol>
+                        {% endif %}
 
                         {% if section.items|length %}
                             <ol class="menu-section-items">
@@ -201,17 +273,11 @@
             </ol>
         {% endif %}
 
-        <div class="back-to-top"><a href="#top">Back to top^</a></div>
-       
-    </div>
-
-
-<footer>
-    <div class="wrapper clearfix">
-
-    <div class="menu-info">
-
         {% if menu.note is not null %}
+
+         <div class="back-to-top"><a href="#top">Back to top^</a></div>
+
+        <div class="menu-info">
             <p class="menu-note">{{ menu.note }}</p>
         {% endif %}
         {% if menu.dietaryInfoKeys|length %}
@@ -229,8 +295,17 @@
                 {% endif %}
             {% endfor %}
         {% endif %}
-
     </div>    
+       
+</div>
+
+
+
+
+<footer>
+    <div class="wrapper clearfix">
+
+    
          {{widget('content', 'footercolumn1content', {"content":"<p>Lorem Ipsum Dolor</p>"})|raw}}
        
     </div>
