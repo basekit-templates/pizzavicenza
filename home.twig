@@ -2,58 +2,23 @@
 
 {% block content %}
 
-<a name="top"></a>
 <header>
     <div class="wrapper clearfix">
-        
-
-
-            <div class="companyheader clearfix">
-                {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
-                {{widget('companyname', 'companyname', {"business": "Pizza Vicenza"})|raw}}
-            </div>
-
-       <div class="desktop-nav">          
-            <div class="navigation">                                                                    
-                <ul>
-                    <li><a href="/snacks"><span class=" menu-icon"></span><span class="text">Snacks</span></a></li>
-                    <li><a href="/breakfast"><span class=" menu-icon"></span><span class="text">Breakfast</span></a></li>
-                    <li><a href="/salads"><span class=" menu-icon"></span><span class="text">Salads</span></a></li>
-                    <li><a href="/pasta"><span class=" menu-icon"></span><span class="text">Pasta</span></a></li>
-                    <li><a href="/burgers"><span class=" menu-icon"></span><span class="text">Burgers</span></a></li>
-                    <li><a href="/paninies"><span class=" menu-icon"></span><span class="text">Paninies</span></a></li>
-                    <li><a href="/desserts"><span class=" menu-icon"></span><span class="text">Desserts</span></a></li>
-                    <li><a href="/hot-drinks"><span class=" menu-icon"></span><span class="text">Hot Drinks</span></a></li>
-                    <li><a href="/cold-drinks"><span class=" menu-icon"></span><span class="text">Cold Drinks</span></a></li>
-                </ul>
-
-                <a href="#" class="pull"></a>
-
-            </div> <!--end navigation-->
-        </div><!--end desktop-nav-->
-       
+        <div class="companyheader clearfix">
+            {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+            {{widget('companyname', 'companyname', {"business": "Pizza Vicenza"})|raw}}
+        </div>
+            {{widget('menusections', 'menusections1', {})|raw}}
     </div><!--end wrapper clearfix-->
-
 </header>
-        <div class="top-nav">  
-            {{widget('extendednavigation', 'topnavigation', {})|raw}}
-            </div> 
-            {{widget('menu', 'menu1', {})|raw}}
+
+{{widget('menu', 'menu1', {})|raw}}
        
-</div>
-
-
-
 
 <footer>
     <div class="wrapper clearfix">
-
-    
          {{widget('content', 'footercolumn1content', {"content":"<p>Lorem Ipsum Dolor</p>"})|raw}}
-       
     </div>
-
-<div class="back-to-top"><a href="#top">Back to top^</a></div>
     
 </footer>
 
