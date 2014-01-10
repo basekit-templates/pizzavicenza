@@ -126,7 +126,7 @@ header {
         padding: 30px 0 0 0;
 
         @media @tablet { 
-            padding: 50px 0;
+            padding: 30px 0 60px;
         }
     
            .widget.logo {
@@ -244,412 +244,546 @@ header {
 } /* end header */
 
 
+/* ===============================
+   MENU SECTIONS NAVIGATION
+   =============================== */
+
+.widget.menusections {
+    text-align: center;
+    padding:40px 0 0px 0;
+    min-height: 30px;
+    @media @tablet {
+        border-top: 1px dotted rgba(0, 0, 0, 0.3);
+    }
+    ul {
+        display: inline-block;
+        list-style: none;
+        margin: 0px;
+        padding: 0;
+        @media @tablet {
+            /* Hidden until nav icon is clicked */
+            display: none;
+            /* Then these styles are applied */
+            width: 100%;
+        }
+
+        /* ALIGN CENTER */
+        &.align-center {
+            li {
+                text-align: center;
+                &:hover {
+                    li {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        /* ALIGN LEFT */
+        &.align-left {
+            li {
+                text-align: left;
+                &:hover {
+                    li {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+        /* ALIGN RIGHT */
+        &.align-right {
+            li {
+                text-align: right;
+                &:hover {
+                    li {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+        li {
+            padding: 0 12px;
+            float: left;
+            display: block;
+            padding-right: 15px;
+            @media @tablet {
+                    width: 100%;
+                    padding: 1em 0;
+                    border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+            }
+
+            a {
+                display: block;
+                font-family:@font-swatch6-font-family;
+                font-size:@font-swatch6-font-size;
+                font-weight: @font-swatch6-font-weight;
+                color: @font-swatch6-color;
+                line-height:@font-swatch6-line-height;
+                letter-spacing: @font-swatch6-letter-spacing;
+                &:hover {
+                    color: @font-swatch6-color-hover;
+                    text-decoration: none;
+                }
+                &:after {
+                    content: "●";
+                    font-size: 0.8em;
+                    padding-left: 8px;
+                    position: absolute;
+                    bottom: 0.4em;
+                    color: @color-swatch5;
+                    @media @tablet {
+                        display: none;
+                    }
+                }
+            }
+            &:last-child a:after {
+                content: "";
+            }
+        }
+    }
+    a {
+            &.pull {
+                display: none;
+                @media @tablet {
+                    display: block;
+                    width: 100%;
+                    position: absolute;
+                    top: 1px;
+                    &:after {
+                        content:"";
+                        background: image('/images/nav-icon.png') no-repeat;
+                        background-position: center;
+                        width: 50px;
+                        height: 50px;
+                        top: -28px;
+                        left: 50%;
+                        margin-left:-25px;
+                        background-color: @color-swatch5;
+                        display: inline-block;
+                        position: absolute;
+                        border: none;
+                        -webkit-border-radius: 100px;
+                        -moz-border-radius: 100px;
+                        border-radius: 100px;
+                    }
+                }
+            }
+        }
+}
 
 
 /* ===============================
    MENU
    =============================== */
 
-.main {
-    padding: 0px 0 20px 0;
-    background-image: image('/images/brown-circle.png');
-    background-repeat: repeat-x;
-    background-size: 10px;
-    background-position: bottom;
-    margin-bottom: 40px;
-
-        @media @tablet {
-            padding: 10px 0;
-        }
-
-        ol, li { /* removes list-style on sections and items */
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        } 
-
-        .menu-sections {
-            margin-top: 2em;
-        }
-
-    /* SECTION AND SUB-SECTION HEADERS */
-
-        .menu-header, .menu-section-header {
-            margin-bottom: 2em;
-            text-align: center;
-
-
-            .menu-name-background { 
-                    width: 20%;
-                    position: relative;
-                    background-color: @color-swatch3;
-                    text-align: center;
-                    padding: 0.5em; 
-                    margin: 2em auto 2em;
-
-                    @media @tablet {
-                    margin: 0 auto 2em;
-                    width: 40%;
-                    }
-
-                    @media @mobile { 
-                    width: 80%;
-                    }
-                
-                &:before, &:after {
-                     content: "";
-                     position: absolute;
-                     display: block;
-                     bottom: -0.7em;
-                     border: 1.4em solid darken(@color-swatch3,5%);
-                     z-index: -1;
-                        }
-                &:before {
-                    left: -1.8em;
-                    border-right-width: 1.5em;
-                    border-left-color: transparent;
-                    }
-                &:after {
-                    right: -1.8em;
-                    border-left-width: 1.5em;
-                    border-right-color: transparent;
-                    }
-
-                h1 { /* menu-name */
-
-                    color: @color-swatch7;
-                    padding: 0;
-
-                    &:before, &:after {
-                     content: "";
-                     position: absolute;
-                     display: block;
-                     border-style: solid;
-                     border-color: darken(@color-swatch3,20%) transparent transparent transparent;
-                     bottom: -0.5em;
-                        }
-
-                    &:before {
-                     left: 0;
-                     border-width: 0.5em 0 0 0.8em;                         
-                        }
-
-                    &:after {
-                     right: 0;
-                     border-width: 0.5em 0.8em 0 0;
-                        }
-                } /*end h1*/       
-
-            } /*end menu-name-background */
-
-            .menu-section-background { 
-                    width: 50%;
-                    position: relative;
-                    background-color: darken(@color-swatch1,10%);
-                    text-align: center;
-                    padding: 0.5em; 
-                    margin: 2em auto 2em;
-
-                    @media @tablet {
-                    margin: 0 auto 2em;
-                    width: 50%;
-                    }
-
-                    @media @mobile { 
-                    width: 80%;
-                    }
-                
-                &:before, &:after {
-                     content: "";
-                     position: absolute;
-                     display: block;
-                     bottom: -0.7em;
-                     border: 1.4em solid darken(@color-swatch1,15%);
-                     z-index: -1;
-                        }
-                &:before {
-                    left: -1.8em;
-                    border-right-width: 1.5em;
-                    border-left-color: transparent;
-                    }
-                &:after {
-                    right: -1.8em;
-                    border-left-width: 1.5em;
-                    border-right-color: transparent;
-                    }
-
-                h2 { /* menu-section-name */
-
-                    color: @color-swatch7;
-                    padding: 0;
-
-                    &:before, &:after {
-                     content: "";
-                     position: absolute;
-                     display: block;
-                     border-style: solid;
-                     border-color: darken(@color-swatch1,25%) transparent transparent transparent;
-                     bottom: -0.5em;
-                        }
-
-                    &:before {
-                     left: 0;
-                     border-width: 0.5em 0 0 0.8em;                         
-                        }
-
-                    &:after {
-                     right: 0;
-                     border-width: 0.5em 0.8em 0 0;
-                        }
-                } /*end h2*/       
-
-            } /*end menu-name-background */
-
-            p { /* menu-availability, menu-description and menu-section-description */
-                padding: 10px 0; 
+.widget.menu {
+     margin-top: 90px;
+    .main {
+        padding: 0 30px;
+        margin-bottom: 40px;
+        border: 1px dotted rgba(0, 0, 0, 0.3);
+            @media @tablet {
+                padding: 10px 0;
             }
 
-        } /*end menu-header and menu-section-header */
+            ol, li { /* removes list-style on sections and items */
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            } 
+
+            .menu-sections {
+                margin-top: 2em;
+            }
+
+        /* SECTION AND SUB-SECTION HEADERS */
+
+            .menu-header, .menu-section-header {
+                margin-bottom: 2em;
+                text-align: center;
 
 
-    /* ITEMS */
+                .menu-name-background { 
+                        width: 20%;
+                        position: relative;
+                        background-color: @color-swatch3;
+                        text-align: center;
+                        padding: 0.5em; 
+                        margin: -2.3em auto 2em;
 
-        .menu-items, .menu-section-items {
-               -moz-column-count: 2;
-               -moz-column-gap: 50px;
-               -webkit-column-count: 2;
-               -webkit-column-gap : 50px;
-                -moz-column-rule-color:  @color-swatch4;
-               -moz-column-rule-style:  dotted;
-               -moz-column-rule-width:  1px;
-               -webkit-column-rule-color:  @color-swatch4;
-               -webkit-column-rule-style: dotted ;
-               -webkit-column-rule-width:  1px;
-
-                @media @mobile { 
-                   -moz-column-count: 1;
-                   -moz-column-gap: 50px;
-                   -webkit-column-count: 1;
-                   -webkit-column-gap : 50px;
-                }
-
-            
-            li { /* menu-item and menu-section-item */
-                position: relative;
-                display: block;
-                padding-bottom: 2em;
-                margin-bottom: 2.5em;
-                border-bottom: 1px dotted darken(@color-swatch7,20%);
-
-                @media @mobile { 
-                    margin-bottom: 1.5em;
-                    padding-bottom: 1.5em;
-                }
-
-                &.menu-item-promoted {
-                        background-color: rgba(255, 255, 255, 0.3);
-                        padding: 2.3em 1em 0em 1em;
-                        margin-bottom: 2.5em;
-                        border: none;
-                        -webkit-border-radius: 5px;
-                        -moz-border-radius: 5px;
-                        border-radius: 5px;
-
-
-                        h3 {
-                            width: auto;
+                        @media @tablet {
+                        margin: 0 auto 2em;
+                        width: 40%;
                         }
+
+                        @media @mobile { 
+                        width: 80%;
+                        }
+                    
+                    &:before, &:after {
+                         content: "";
+                         position: absolute;
+                         display: block;
+                         bottom: -0.7em;
+                         border: 1.4em solid darken(@color-swatch3,5%);
+                         z-index: -1;
+                            }
+                    &:before {
+                        left: -1.8em;
+                        border-right-width: 1.5em;
+                        border-left-color: transparent;
+                        }
+                    &:after {
+                        right: -1.8em;
+                        border-left-width: 1.5em;
+                        border-right-color: transparent;
+                        }
+
+                    h1 { /* menu-name */
+
+                        color: @color-swatch7;
+                        padding: 0;
+
+                        &:before, &:after {
+                         content: "";
+                         position: absolute;
+                         display: block;
+                         border-style: solid;
+                         border-color: darken(@color-swatch3,20%) transparent transparent transparent;
+                         bottom: -0.5em;
+                            }
+
+                        &:before {
+                         left: 0;
+                         border-width: 0.5em 0 0 0.8em;                         
+                            }
 
                         &:after {
-                            content: image('/images/badge.png');
-                            position: absolute;
-                            top: -5%;
-                            display: block;
-                            z-index: 9999999;
-                            right: 5%;
-                            color: @color-swatch3;
+                         right: 0;
+                         border-width: 0.5em 0.8em 0 0;
+                            }
+                    } /*end h1*/       
+
+                } /*end menu-name-background */
+
+                .menu-section-background { 
+                        width: 50%;
+                        position: relative;
+                        background-color: darken(@color-swatch1,10%);
+                        text-align: center;
+                        padding: 0.5em; 
+                        margin: 2em auto 2em;
+
+                        @media @tablet {
+                        margin: 0 auto 2em;
+                        width: 50%;
                         }
 
-                }/* end menu-item-promoted */
+                        @media @mobile { 
+                        width: 80%;
+                        }
+                    
+                    &:before, &:after {
+                         content: "";
+                         position: absolute;
+                         display: block;
+                         bottom: -0.7em;
+                         border: 1.4em solid darken(@color-swatch1,15%);
+                         z-index: -1;
+                            }
+                    &:before {
+                        left: -1.8em;
+                        border-right-width: 1.5em;
+                        border-left-color: transparent;
+                        }
+                    &:after {
+                        right: -1.8em;
+                        border-left-width: 1.5em;
+                        border-right-color: transparent;
+                        }
+
+                    h2 { /* menu-section-name */
+
+                        color: @color-swatch7;
+                        padding: 0;
+
+                        &:before, &:after {
+                         content: "";
+                         position: absolute;
+                         display: block;
+                         border-style: solid;
+                         border-color: darken(@color-swatch1,25%) transparent transparent transparent;
+                         bottom: -0.5em;
+                            }
+
+                        &:before {
+                         left: 0;
+                         border-width: 0.5em 0 0 0.8em;                         
+                            }
+
+                        &:after {
+                         right: 0;
+                         border-width: 0.5em 0.8em 0 0;
+                            }
+                    } /*end h2*/       
+
+                } /*end menu-name-background */
+
+                p { /* menu-availability, menu-description and menu-section-description */
+                    padding: 10px 0; 
+                }
+
+            } /*end menu-header and menu-section-header */
 
 
-                .inner-item {
+        /* ITEMS */
+
+            .menu-items, .menu-section-items {
+                   -moz-column-count: 2;
+                   -moz-column-gap: 50px;
+                   -webkit-column-count: 2;
+                   -webkit-column-gap : 50px;
+                    -moz-column-rule-color: rgba(0, 0, 0, 0.2);
+                   -moz-column-rule-style:  dotted;
+                   -moz-column-rule-width:  1px;
+                   -webkit-column-rule-color:  rgba(0, 0, 0, 0.2);
+                   -webkit-column-rule-style: dotted ;
+                   -webkit-column-rule-width:  1px;
+
+                    @media @mobile { 
+                       -moz-column-count: 1;
+                       -moz-column-gap: 50px;
+                       -webkit-column-count: 1;
+                       -webkit-column-gap : 50px;
+                    }
+
+                
+                li { /* menu-item and menu-section-item */
+                    position: relative;
+                    display: block;
+                    padding-bottom: 2em;
+                    margin-bottom: 2.5em;
+                    border-bottom: 1px dotted darken(@color-swatch7,20%);
+
+                    @media @mobile { 
+                        margin-bottom: 1.5em;
+                        padding-bottom: 1.5em;
+                    }
+
+                    &.menu-item-promoted {
+                            background-color: rgba(255, 255, 255, 0.3);
+                            padding: 2.3em 1em 0em 1em;
+                            margin-bottom: 2.5em;
+                            border: none;
+                            -webkit-border-radius: 5px;
+                            -moz-border-radius: 5px;
+                            border-radius: 5px;
+
+
+                            h3 {
+                                width: auto;
+                            }
+
+                            &:after {
+                                content: image('/images/badge.png');
+                                position: absolute;
+                                top: -5%;
+                                display: block;
+                                z-index: 9999999;
+                                right: 5%;
+                                color: @color-swatch3;
+                            }
+
+                    }/* end menu-item-promoted */
+
+
+                    .inner-item {
+                        display: inline-block;
+
+                        h3 { /* menu-item-name and menu-section-item-name */  
+                            padding: 0;
+                            float: left;
+                        }
+
+
+                        img { /* menu-item-image and menu-section-item-image */
+                            border: none;
+                            -webkit-border-radius: 5px;
+                            -moz-border-radius: 5px;
+                            border-radius: 5px;
+                            width: 100%;
+                            margin: 15px 0;
+                        }
+
+                        .menu-item-price p {   /* standard-price */
+                                font-family:@font-swatch8-font-family;
+                                font-size:@font-swatch8-font-size;
+                                font-weight: @font-swatch8-font-weight;
+                                line-height:@font-swatch8-line-height;
+                                color: @font-swatch8-color;
+                                letter-spacing: @font-swatch8-letter-spacing;
+                                padding: 0px;
+                                margin: 0;
+                                display: inline-block;
+                                &:before {
+                                    content: "-";
+                                    font-size: 0.8em;
+                                    padding-left: 8px;
+                                    position: absolute;
+                                    top: 0.4em;
+                                    color: @color-swatch5;
+                                    @media @tablet {
+                                        display: none;
+                                    }
+                            }
+                        }
+
+                        p { /* item-description */
+                            font-family:@font-swatch5-font-family;
+                            font-size:@font-swatch5-font-size;
+                            font-weight: @font-swatch5-font-weight;
+                            line-height:@font-swatch5-line-height;
+                            color:@font-swatch5-color;
+                            letter-spacing: @font-swatch5-letter-spacing;
+                            float: left;
+                            width: 100%;
+                            margin: 0 0 0.5em 0;
+                            padding: 0;
+                        }
+
+                        h4  { /* nutritional-title for section and subsection */
+                            font-family:@font-swatch5-font-family;
+                            font-size:@font-swatch5-font-size;
+                            font-weight: @font-swatch5-font-weight;
+                            line-height:@font-swatch5-line-height;
+                            color: @color-swatch6;
+                            letter-spacing: @font-swatch5-letter-spacing;
+                            float: left;
+                            width: 100%;
+                            margin: 0;
+                            padding: 0;
+                        }
+                        .menu-item-nutritional-prop { 
+                            font-size:@font-swatch5-font-size;
+                            font-weight: @font-swatch5-font-weight;
+                            line-height:@font-swatch5-line-height;
+                            color: @font-swatch5-color;
+                            float: left;
+                            width: 100%;
+                            margin: 0;
+                            padding: 0;
+                        }
+                        .menu-section-item-dietary-props {
+                            float: left;
+                            width: 100%;
+                            margin: 0;
+                            padding: 0;
+
+                            .dietary-icon {
+                                background-color: lighten(@color-swatch6,10%);
+                                width: 25px;
+                                height: 25px;
+                                border: 0;
+                                -webkit-border-radius: 100px;
+                                -moz-border-radius: 100px;
+                                border-radius: 100px;
+                                background-repeat: no-repeat;
+                                background-size: 19px;
+                                background-position: center;
+                                display: inline-block;
+                            }
+
+                            .vegetarian-icon {
+                                background-image: image('/images/veggie-icon.png');
+                            }
+                            .glutenFree-icon {
+                                background-image: image('/images/gf-icon.png');
+                              }
+                            .nutFree-icon {
+                                background-image: image('/images/nutFree-icon.png');
+                              }
+                            .dairyFree-icon {
+                                background-image: image('/images/dairyFree-icon.png');
+                              }
+                            
+                        } /* end menu-section-item-dietary-props */                        
+
+
+                        .menu-item-description, .menu-section-item-description {
+                            margin-bottom: 0.5em;
+                        }
+
+
+
+                    } /* end inner-item */
+
+                } /* end li */
+
+            } /* end ol */  
+
+            .menu-info {
+            width: 100%;
+            display: inline-block;
+            text-align: center;
+            margin: 2em 0;
+            padding: 1em;
+            border: 1px dotted @color-swatch4;
+
+
+            p { /* menu-note */
+              float: left;
+              width: 100%;
+            }
+
+            dl { /* menu-dietary-key */
+              float: left;
+              width: 100%;
+              margin: 5px 0;
+
+
+                dt, dd {
                     display: inline-block;
+                }
 
-                    h3 { /* menu-item-name and menu-section-item-name */  
-                        padding: 0;
-                    }
+                dt { /* dietary-icon */
+                    vertical-align: top; 
+                    background-color: lighten(@color-swatch6,10%);
+                    width: 25px;
+                    height: 25px;
+                    border: 0;
+                    -webkit-border-radius: 100px;
+                    -moz-border-radius: 100px;
+                    border-radius: 100px;
+                    background-repeat: no-repeat;
+                    background-size: 13px;
+                    background-position: center;
+                }
 
+                .vegetarian-icon {
+                    background-image: image('/images/veggie.png');
+                }
 
-                    img { /* menu-item-image and menu-section-item-image */
-                        border: none;
-                        -webkit-border-radius: 5px;
-                        -moz-border-radius: 5px;
-                        border-radius: 5px;
-                        width: 100%;
-                        margin: 15px 0;
-                    }
+                .glutenFree-icon {
+                    background-image: image('/images/nuts.png');
+                }
 
-                    li {
-                        border-bottom: 0;
-                    }
+                dd { /* text for icon */
+                    font-family:@font-swatch5-font-family;
+                    font-size:@font-swatch5-font-size;
+                    font-weight: @font-swatch5-font-weight;
+                    line-height:@font-swatch5-line-height;
+                    color: @font-swatch5-color;
+                    letter-spacing: @font-swatch5-letter-spacing;
+                    margin: 0 5px -7px;
+                } /* end dd */
+             
 
-            
-                    ul, ol, li { /* removes list-style on subsections, items and prices */
-                        list-style: none;
-                        padding: 0;
-                        margin: 0;
-                    } 
+            } /* end dl */
 
+        } /* end menu-info */
 
-                    ol li p { /* standard-price and variant-price */
-                        font-family:@font-swatch5-font-family;
-                        font-size:@font-swatch5-font-size;
-                        font-weight: @font-swatch5-font-weight;
-                        line-height:@font-swatch5-line-height;
-                        color: @color-swatch6;
-                        letter-spacing: @font-swatch5-letter-spacing;
-                        padding: 0px;
-                        margin: 0px;
-                    }
+    } /* end main */
 
-
-                    p { /* item-description */
-                        font-family:@font-swatch5-font-family;
-                        font-size:@font-swatch5-font-size;
-                        font-weight: @font-swatch5-font-weight;
-                        line-height:@font-swatch5-line-height;
-                        color:@font-swatch5-color;
-                        letter-spacing: @font-swatch5-letter-spacing;
-                        float: left;
-                        width: 100%;
-                        margin: 0 0 0.5em 0;
-                        padding: 0;
-                    }
-
-                    .menu-section-item-dietary-props {
-                        float: left;
-                        width: 100%;
-                        margin: 0;
-                        padding: 0;
-
-                        .dietary-icon {
-                            background-color: lighten(@color-swatch6,10%);
-                            width: 25px;
-                            height: 25px;
-                            border: 0;
-                            -webkit-border-radius: 100px;
-                            -moz-border-radius: 100px;
-                            border-radius: 100px;
-                            background-repeat: no-repeat;
-                            background-size: 19px;
-                            background-position: center;
-                            display: inline-block;
-                        }
-
-                        .vegetarian-icon {
-                            background-image: image('/images/v.png');
-                        }
-
-                        .glutenFree-icon {
-                            background-image: image('/images/gf.png');
-                        }
-                        
-                    } /* end menu-section-item-dietary-props */
-
-                    h4, ul li p  { /* nutritional-title and nutritional-prop for section and subsection */
-                        font-family:@font-swatch5-font-family;
-                        font-size:@font-swatch5-font-size;
-                        font-weight: @font-swatch5-font-weight;
-                        line-height:@font-swatch5-line-height;
-                        color: @color-swatch6;
-                        letter-spacing: @font-swatch5-letter-spacing;
-                        float: left;
-                        width: 100%;
-                        margin: 0;
-                        padding: 0;
-                    }
-
-                    ul { /* menu-section-item-nutritional-props */
-                        padding: 0 0 10px;
-                    }
-
-
-                    .menu-item-description, .menu-section-item-description {
-                        margin-bottom: 0.5em;
-                    }
-
-
-
-                } /* end inner-item */
-
-            } /* end li */
-
-        } /* end ol */  
-
-        .menu-info {
-        width: 100%;
-        display: inline-block;
-        text-align: center;
-        margin: 2em 0;
-        padding: 1em;
-        border: 1px dotted @color-swatch4;
-
-
-        p { /* menu-note */
-          float: left;
-          width: 100%;
-        }
-
-        dl { /* menu-dietary-key */
-          float: left;
-          width: 100%;
-          margin: 5px 0;
-
-
-            dt, dd {
-                display: inline-block;
-            }
-
-            dt { /* dietary-icon */
-                vertical-align: top; 
-                background-color: lighten(@color-swatch6,10%);
-                width: 25px;
-                height: 25px;
-                border: 0;
-                -webkit-border-radius: 100px;
-                -moz-border-radius: 100px;
-                border-radius: 100px;
-                background-repeat: no-repeat;
-                background-size: 13px;
-                background-position: center;
-            }
-
-            .vegetarian-icon {
-                background-image: image('/images/veggie.png');
-            }
-
-            .glutenFree-icon {
-                background-image: image('/images/nuts.png');
-            }
-
-            dd { /* text for icon */
-                font-family:@font-swatch5-font-family;
-                font-size:@font-swatch5-font-size;
-                font-weight: @font-swatch5-font-weight;
-                line-height:@font-swatch5-line-height;
-                color: @font-swatch5-color;
-                letter-spacing: @font-swatch5-letter-spacing;
-                margin: 0 5px -7px;
-            } /* end dd */
-         
-
-        } /* end dl */
-
-    } /* end menu-info */
-
-} /* end main */
-
+} /* end .widget.menu */
 
 
 /* ===============================
@@ -672,397 +806,6 @@ footer {
 
 } /* end footer */
 
-
-    
-
-/* ===============================
-  BACK TO TOP
-   =============================== */
-
-.back-to-top {
-  text-align: center;
-  height: 66px;
-
-    a {
-        background-image: image('/images/back-to-top.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        height: 66px;
-        text-indent: -2000px;
-        display: block;
-
-    }
-
-} /*end back-to-top */
-
-
-
-/* ===============================
-   MENU NAVIGATION
-   =============================== */
-
-
-.top-nav {
-  display: none;
-}
-
-.desktop-nav {
-  padding:23px 0 0px 0;
-}   
-
-.navigation {
-  text-align: center;
-}
-
-.navigation ul {
-  display: inline-block;
-  list-style: none;
-  margin-bottom: 0;
-}
-
-.navigation ul li {
-  padding: 0 12px;
-  float: left;
-}
-
-.navigation ul li a {
-  display: block;
-  font-family:@font-swatch6-font-family;
-  font-size:@font-swatch6-font-size;
-  font-weight: @font-swatch6-font-weight;
-  color: @font-swatch6-color;
-  line-height:@font-swatch6-line-height;
-  letter-spacing: @font-swatch6-letter-spacing;
-}
-
-.navigation ul li a:after {
-content: "●";
-font-size: 0.8em;
-padding-left: 8px;
-position: absolute;
-bottom: 0.4em;
-color: @color-swatch5;
-}
-
-.navigation ul li:last-child a:after {
-content: "";
-}
-
-    @media only screen and (max-width: 1200px) {
-    .navigation ul li a:after {
-    content: "";
-    }
-}
-
-.navigation ul li a:hover {
-   color: @font-swatch6-color-hover;
-   text-decoration: none;
- }
-
-
-
-
-
-
- 
-
-
-
-
-
-.widget.navigation {
-}
-
-.widget.navigation ul {
-  padding: 0;
-  margin: 20px 0 0;
-}
-
-.widget.navigation ul.align-center li
-{
-  text-align: center;
-}
-
-.widget.navigation ul.align-left li
-{
-  text-align: left;
-}
-
-.widget.navigation ul.align-right li
-{
-  text-align: right;
-}
-
-.widget.navigation ul li {
-  float: left;
-  display: block;
-  padding-right: 40px;
-}
-
-.navigation ul li a {
-  display: block;
-  font-family:@font-swatch6-font-family;
-  font-size:@font-swatch6-font-size;
-  font-weight: @font-swatch6-font-weight;
-  color: @font-swatch6-color;
-  line-height:@font-swatch6-line-height;
-  letter-spacing: @font-swatch6-letter-spacing;
-}
-
-.widget.navigation ul li a:hover {
-  text-decoration: none;
-  color: @color-swatch3;
-}
-
-/* ===============================
-   EXTENDED NAVIGATION
-   =============================== */
-
-.widget.extendednavigation {
-    text-align: center;
-    position: relative;
-}
-
-
-.widget.extendednavigation ul {
-  padding: 0;
-  margin: 0;
-}
-
-.widget.extendednavigation a.pull {
-  display: none;
-}
-
-.widget.extendednavigation ul.align-center li
-{
-  text-align: center;
-}
-
-.widget.extendednavigation ul.align-left li
-{
-  text-align: left;
-}
-
-.widget.extendednavigation ul.align-right li
-{
-  text-align: right;
-}
-
-.widget.extendednavigation ul li {
-  display: inline-block;
-}
-
-
-.widget.extendednavigation ul li a, .widget.extendednavigation ul li.folder .text {
-  display: block;
-  padding: 16px 20px;
-  margin: 0;
-  font-family:@font-swatch6-font-family;
-  font-size:@font-swatch6-font-size;
-  font-weight: @font-swatch6-font-weight;
-  color: @font-swatch6-color;
-  line-height:@font-swatch6-line-height;
-  letter-spacing: @font-swatch6-letter-spacing;
-}
-
-.widget.extendednavigation ul li a, .widget.extendednavigation ul li.folder .text:hover {
-  color: @font-swatch6-color;
-}
-
-.widget.extendednavigation ul li.folder .text:hover {
-   color: @font-swatch6-color-hover;
-}
-
-
-.widget.extendednavigation ul li a:hover, .widget.extendednavigation ul li.folder:hover {
-  text-decoration: none;
-  color: @font-swatch6-color-hover;
-}
-
-.widget.extendednavigation ul li.folder {
-  background-image: image('/images/arrow-down.png');
-  background-size: 22px 10px;
-  background-position: right center;
-  background-repeat: no-repeat;
-  height: 100%;
-  cursor: pointer;
-}
-
-
-.widget.extendednavigation li > ul {
-  display: none;
-}
-
-.widget.extendednavigation ul li:hover > ul {
-  display: block;
-  width: 186px;
-  position: absolute;
-  background-color: @color-swatch7;
-  border-top: 2px solid @color-swatch3;
-  z-index: 500;
-  margin-top: 0;
-  padding: 0;
-}
-
-.widget.extendednavigation ul li:hover > ul > li {
-  display: block;
-  width: 100%;
-  text-align: center;
-}
-
-.widget.extendednavigation ul li:hover > ul li a {
-  padding: 0;
-}
-
-.widget.extendednavigation ul li:hover > ul > li > a .text {
-  margin-left: 0;
-  color: @font-swatch6-color;
-}
-
-.widget.extendednavigation ul li:hover > ul > li > a:hover {
-  color: @font-swatch6-color-hover;
-}
-
-/* EXTENDED NAVIGATION - INSIDE ZONE */
-
-.main .widget.extendednavigation {
-    max-width: 100%;
-    width: 100%;
-    float: none;
-    text-align: left;
-}
-
-.main .widget.extendednavigation:before,
-.main .widget.extendednavigation:after {
-    content: " ";
-    display: table;
-  }
-.main .widget.extendednavigation:after {
-    clear: both;
-}
-.main .widget.extendednavigation {
-    *zoom: 1;
-}
-
-
-
-/* ===============================
-   IPAD WIDTH
-   =============================== */
-
-@media only screen and (max-width: 768px) {
-
-
-  /* NAV */
-
-  .desktop-nav {
-    display: none;
-  }
-
-  .top-nav {
-    display: block;
-    border-top: 1px dotted rgba(0, 0, 0, 0.3);
-  }
-
-  #page-zones__template-widgets__extendednavigation-topnavigation-bk-overlay {
-    margin-top: -3em;
-}
-
-  .widget.extendednavigation {
-    width: 100%;
-    padding: 0;
-    border-top: none;
-    border-bottom: none;
-    height: 50px;
-    z-index: 99999;
-  }
-
-  .widget .extendednavigation {
-    display: block;
-    float: left;
-    width: 100%;
-  }
-
-  /* NAV ICON */
-
-  .widget .extendednavigation a.pull {
-    display: block;
-    width: 100%;
-    position: absolute;
-    top: 1px;
-
-  }
-
-    .widget .extendednavigation a.pull:after {
-    content:"";
-    background: image('/images/nav-icon.png') no-repeat;
-    background-position: center;
-    width: 50px;
-    height: 50px;
-    top: -28px;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
-    background-color: @color-swatch5;
-    display: inline-block;
-    position: absolute;
-    border: none;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-    border-radius: 100px;
-  }
-
-  /* NAV */
-
-  .widget .extendednavigation ul {
-    width: 100%;
-    display: none;
-    padding: 2em 0 0;
-    margin-bottom: 3em;
-    border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
-  }
-
-  .widget .extendednavigation li {
-    width: 100%;
-    padding: 0;
-  }
-
-
-    .widget.extendednavigation ul li:last-child {
-    border-bottom: none;
-  }
-
-  .widget.extendednavigation ul li a, .widget.extendednavigation ul li.folder .text {
-    padding: 12px 0;
-  }
-
-
-  .widget.extendednavigation ul li > ul {
-    display: none !important;
-  }
-
-  .widget.extendednavigation ul li:hover > ul {
-    display: block!important;
-    width: 100%;
-  }
-
-  .widget.extendednavigation ul li:hover > ul li {
-    padding: 10px 0;
-  }
-
-
-
-  .widget.extendednavigation ul li:hover > ul li .text, .widget.extendednavigation ul li:hover > ul li.folder .text {
-
-    background-image: image('/images/arrow-left-wh.png');
-    background-position: left center;
-    background-repeat: no-repeat;
-  }
-
- 
-
-
-}
 
 
 /* ===============================
