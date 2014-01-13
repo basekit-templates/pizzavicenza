@@ -124,118 +124,72 @@ header {
     .companyheader {
         display: block;
         padding: 30px 0 0 0;
-
         @media @tablet { 
             padding: 30px 0 60px;
         }
     
-           .widget.logo {
-              width: 100%;
-              text-align: center;
-            }
+       .widget.logo {
+          width: 100%;
+          text-align: center;
+        }
 
         .widget.companyname {
-                     text-align: center;
-                     width: 30%;
-                     position: relative;
-                     background-color: lighten(@color-swatch5,20%);
-                     color: @color-swatch7;
-                     text-align: center;
-                     padding: 0.5em; 
-                     margin: 0.8em auto 1.5em;
-
-            @media @tablet { 
-                    width: 40%;
-                }
-
+            color: @color-swatch7;
+            width: 30%;
+            position: relative;
+            background-color: lighten(@color-swatch5,20%);
+            text-align: center;
+            padding: 0.6em;
+            margin: 0.8em auto 1.5em;
+            @media @tablet {
+            margin: 0 auto 2em;
+            width: 40%;
+            }
             @media @mobile { 
-                    width: 80%;
-                    padding: 0.8em; 
+            width: 80%;
+            padding: 0.8em; 
+            }
+            &:before, &:after {
+                 content: "";
+                 position: absolute;
+                 display: block;
+                 bottom: -0.4em;
+                 border: 1.6em solid lighten(@color-swatch5,15%);
+                    }
+            &:before {
+                left: -2.05em;
+                border-right-width: 0.4em;
+                border-left-color: transparent;
+                z-index: 2;
+
+                }
+            &:after {
+                right: -2.05em;
+                border-left-width: 0.4em;
+                border-right-color: transparent;
+                z-index: 2;
+                } 
+            a {
+                font-family:@font-swatch10-font-family;
+                font-weight: @font-swatch10-font-weight;
+                color:@font-swatch10-color;
+                line-height:@font-swatch10-line-height;
+                letter-spacing: @font-swatch10-letter-spacing;
+                font-size: @font-swatch10-font-size;
+                padding: 10px 8px 8px;
+                @media @tablet { 
+                    font-size: bkscale(@font-swatch10-font-size, 0.9);
+                    line-height:bkscale(@font-swatch10-line-height,0.9);
                 }
 
-
-             &:before, &:after {
-                     content: "";
-                     position: absolute;
-                     display: block;
-                     bottom: -0.8em;
-                     border: 1.5em solid lighten(@color-swatch5,15%);
-                     z-index: -1;
-            }
-
-            &:before {
-                     left: -1.8em;
-                     border-right-width: 1.5em;
-                     border-left-color: transparent;
-
-                    @media @tablet { 
-                        border-right-width: 1.4em;
-                    }
-
-                    @media @mobile { 
-                        border-right-width: 1.3em;
-                    }
-
-            }
-
-            &:after {
-                    right: -1.8em;
-                    border-left-width: 1.5em;
-                    border-right-color: transparent;
-
-                    @media @tablet { 
-                        border-left-width: 1.4em;
-                    }
-
-                    @media @mobile { 
-                        border-left-width: 1.3em;
-                    }
-            }
-
-           a {
-                        font-family:@font-swatch10-font-family;
-                        font-weight: @font-swatch10-font-weight;
-                        color:@font-swatch10-color;
-                        line-height:@font-swatch10-line-height;
-                        letter-spacing: @font-swatch10-letter-spacing;
-                        font-size: @font-swatch10-font-size;
-                        padding: 10px 8px 8px;
-
-                        @media @tablet { 
-                            font-size: bkscale(@font-swatch10-font-size, 0.9);
-                            line-height:bkscale(@font-swatch10-line-height,0.9);
-        
-                        }
-
-                        @media @mobile { 
-                            font-size: bkscale(@font-swatch10-font-size, 0.8);
-                            line-height:bkscale(@font-swatch10-line-height,0.8);
-        
-                        }
-            
-            
-                       &:before, &:after {
-                                 content: "";
-                                 position: absolute;
-                                 display: block;
-                                 border-style: solid;
-                                 border-color: @color-swatch5 transparent transparent transparent;
-                                 bottom: -0.5em;
-                                }
-                     &:before {
-                                 left: 0;
-                                 border-width: 0.5em 0 0 0.8em;
-                                    
-                                }
-                     &:after {
-                                 right: 0;
-                                 border-width: 0.5em 0.8em 0 0;
-                                }
-        } /* end a */
-
-         a:hover {
+                @media @mobile { 
+                    font-size: bkscale(@font-swatch10-font-size, 0.8);
+                    line-height:bkscale(@font-swatch10-line-height,0.8);
+                }
+                &:hover {
                       text-decoration: none;
                     }
+            } /* end a */
 
        } /* end companyname */
 
@@ -401,134 +355,79 @@ header {
                 margin-bottom: 2em;
                 text-align: center;
 
-                .menu-name-background { 
-                        width: 20%;
-                        position: relative;
-                        background-color: @color-swatch3;
-                        text-align: center;
-                        padding: 0.5em; 
-                        margin: -2.3em auto 2em;
-
-                        @media @tablet {
-                        margin: 0 auto 2em;
-                        width: 40%;
-                        }
-
-                        @media @mobile { 
-                        width: 80%;
-                        }
-                    
+                h1 { 
+                    color: @color-swatch7;
+                    width: 25%;
+                    position: relative;
+                    background-color: @color-swatch3;
+                    text-align: center;
+                    padding: 0.5em;
+                    margin: -1.7em auto 2em;
+                    @media @tablet {
+                    margin: 0 auto 2em;
+                    width: 40%;
+                    }
+                    @media @mobile { 
+                    width: 80%;
+                    }
                     &:before, &:after {
                          content: "";
                          position: absolute;
                          display: block;
-                         bottom: -0.7em;
-                         border: 1.4em solid darken(@color-swatch3,5%);
-                         z-index: -1;
+                         bottom: -0.4em;
+                         border: 1.2em solid darken(@color-swatch3,5%);
                             }
                     &:before {
-                        left: -1.8em;
-                        border-right-width: 1.5em;
+                        left: -1.6em;
+                        border-right-width: 0.4em;
                         border-left-color: transparent;
+                        z-index: 2;
+
                         }
                     &:after {
-                        right: -1.8em;
-                        border-left-width: 1.5em;
+                        right: -1.65em;
+                        border-left-width: 0.4em;
                         border-right-color: transparent;
-                        }
-
-                    h1 { /* menu-name */
-
-                        color: @color-swatch7;
-                        padding: 0;
-
-                        &:before, &:after {
-                         content: "";
-                         position: absolute;
-                         display: block;
-                         border-style: solid;
-                         border-color: darken(@color-swatch3,20%) transparent transparent transparent;
-                         bottom: -0.5em;
-                            }
-
-                        &:before {
-                         left: 0;
-                         border-width: 0.5em 0 0 0.8em;                         
-                            }
-
-                        &:after {
-                         right: 0;
-                         border-width: 0.5em 0.8em 0 0;
-                            }
-                    } /*end h1*/       
-
+                        z-index: 2;
+                        }     
                 } /*end menu-name-background */
 
-                .menu-section-background { 
+                h2 {    
+                        color: @color-swatch7;
                         width: 50%;
                         position: relative;
                         background-color: darken(@color-swatch1,10%);
                         text-align: center;
                         padding: 0.5em; 
                         margin: 2em auto 2em;
-
                         @media @tablet {
                         margin: 0 auto 2em;
                         width: 50%;
                         }
-
                         @media @mobile { 
                         width: 80%;
                         }
-                    
-                    &:before, &:after {
-                         content: "";
-                         position: absolute;
-                         display: block;
-                         bottom: -0.7em;
-                         border: 1.4em solid darken(@color-swatch1,15%);
-                         z-index: -1;
-                            }
-                    &:before {
-                        left: -1.8em;
-                        border-right-width: 1.5em;
-                        border-left-color: transparent;
-                        }
-                    &:after {
-                        right: -1.8em;
-                        border-left-width: 1.5em;
-                        border-right-color: transparent;
-                        }
-
-                    h2 { /* menu-section-name */
-
-                        color: @color-swatch7;
-                        padding: 0;
-
                         &:before, &:after {
-                         content: "";
-                         position: absolute;
-                         display: block;
-                         border-style: solid;
-                         border-color: darken(@color-swatch1,25%) transparent transparent transparent;
-                         bottom: -0.5em;
-                            }
-
+                            content: "";
+                            position: absolute;
+                            display: block;
+                            bottom: -0.4em;
+                            border: 1.2em solid darken(@color-swatch1,15%);
+                        }
                         &:before {
-                         left: 0;
-                         border-width: 0.5em 0 0 0.8em;                         
-                            }
-
+                            left: -1.6em;
+                            border-right-width: 0.4em;
+                            border-left-color: transparent;
+                        }
                         &:after {
-                         right: 0;
-                         border-width: 0.5em 0.8em 0 0;
-                            }
-                    } /*end h2*/       
-
-                } /*end menu-name-background */
+                            right: -1.65em;
+                            border-left-width: 0.4em;
+                            border-right-color: transparent;
+                        }
+                } /*end h2 */
 
                 p { /* menu-availability, menu-description and menu-section-description */
-                    padding: 10px 0; 
+                    padding: 0; 
                 }
 
             } /*end menu-header and menu-section-header */
@@ -560,7 +459,6 @@ header {
                     position: relative;
                     display: block;
                     padding-bottom: 2em;
-                    margin-bottom: 2.5em;
                     border-bottom: 1px dotted darken(@color-swatch7,20%);
                     @media @mobile { 
                         margin-bottom: 1.5em;
@@ -568,7 +466,7 @@ header {
                     }
                     &.menu-item-promoted {
                             background-color: rgba(255, 255, 255, 0.3);
-                            padding: 2.3em 1em 0em 1em;
+                            padding: 1.5em 1em 0em 1em;
                             margin-bottom: 2.5em;
                             border: none;
                             -webkit-border-radius: 5px;
@@ -578,9 +476,10 @@ header {
                                 width: auto;
                             }
                             &:after {
-                                content: image('/images/badge.png');
+                                content: "\2605";
+                                font-size: 2em;
                                 position: absolute;
-                                top: -5%;
+                                top: -1.7%;
                                 display: block;
                                 z-index: 9999999;
                                 right: 5%;
@@ -592,7 +491,7 @@ header {
                         display: inline-block;
 
                         h3 { /* menu-item-name */  
-                            padding: 0;
+                            padding: 0 8px 0 0;
                             float: left;
                         }
                         img { /* menu-item-image */
@@ -605,26 +504,16 @@ header {
                             margin: 15px 0;
                         }
                         .menu-item-price p {   /* standard-price */
-                                font-family:@font-swatch8-font-family;
-                                font-size:@font-swatch8-font-size;
-                                font-weight: @font-swatch8-font-weight;
-                                line-height:@font-swatch8-line-height;
-                                color: @font-swatch8-color;
-                                letter-spacing: @font-swatch8-letter-spacing;
-                                padding: 0px;
-                                margin: 0;
-                                display: inline-block;
-                                &:before {
-                                    content: "-";
-                                    font-size: 0.8em;
-                                    padding-left: 8px;
-                                    position: absolute;
-                                    top: 0.4em;
-                                    color: @color-swatch5;
-                                    @media @tablet {
-                                        display: none;
-                                    }
-                            }
+                            font-family:@font-swatch8-font-family;
+                            font-size:@font-swatch8-font-size;
+                            font-weight: @font-swatch8-font-weight;
+                            line-height:@font-swatch8-line-height;
+                            color: darken(@color-swatch3,8%);
+                            letter-spacing: @font-swatch8-letter-spacing;
+                            padding: 0px;
+                            margin: 0;
+                            width: auto;
+                            display: inline-block;
                         }
                         p { /* item-description */
                             font-family:@font-swatch5-font-family;
@@ -663,7 +552,7 @@ header {
                         .menu-section-item-dietary-props {
                             float: left;
                             width: 100%;
-                            margin: 0;
+                            margin-top: 5px;
                             padding: 0;
                             .dietary-icon {
                                 background-color: lighten(@color-swatch6,10%);
@@ -685,10 +574,10 @@ header {
                                 background-image: image('/images/gf-icon.png');
                               }
                             .nutFree-icon {
-                                background-image: image('/images/nutFree-icon.png');
+                                background-image: image('/images/nutsFree.png');
                               }
                             .dairyFree-icon {
-                                background-image: image('/images/dairyFree-icon.png');
+                                background-image: image('/images/dairy-icon.png');
                               }
                         } /* end menu-section-item-dietary-props */                        
 
@@ -703,62 +592,61 @@ header {
             } /* end ol */  
 
             .menu-info {
-            width: 100%;
-            display: inline-block;
-            text-align: center;
-            margin: 2em 0;
-            padding: 1em;
-            border: 1px dotted @color-swatch4;
+                display: inline-block;
+                text-align: center;
+                margin: 2em 0;
+                padding: 1em;
+                background-color: rgba(255, 255, 255, 0.3);
+                border: none;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
 
-            p { /* menu-note */
-              float: left;
-              width: 100%;
-            }
-
-            dl { /* menu-dietary-key */
-              float: left;
-              width: 100%;
-              margin: 5px 0;
-
-
-                dt, dd {
-                    display: inline-block;
+                p { /* menu-note */
+                  float: left;
+                  width: 100%;
+                  padding: 0;
                 }
 
-                dt { /* dietary-icon */
-                    vertical-align: top; 
-                    background-color: lighten(@color-swatch6,10%);
-                    width: 25px;
-                    height: 25px;
-                    border: 0;
-                    -webkit-border-radius: 100px;
-                    -moz-border-radius: 100px;
-                    border-radius: 100px;
-                    background-repeat: no-repeat;
-                    background-size: 13px;
-                    background-position: center;
-                }
+                dl { /* menu-dietary-key */
+                  float: left;
+                  width: 100%;
+                  margin: 5px 0;
+                    dt, dd {
+                        display: inline-block;
+                    }
+                    dt { /* dietary-icon */
+                        vertical-align: top; 
+                        background-color: lighten(@color-swatch6,10%);
+                        width: 25px;
+                        height: 25px;
+                        border: 0;
+                        -webkit-border-radius: 100px;
+                        -moz-border-radius: 100px;
+                        border-radius: 100px;
+                        background-repeat: no-repeat;
+                        background-size: 13px;
+                        background-position: center;
+                    }
+                    .vegetarian-icon {
+                        background-image: image('/images/veggie.png');
+                    }
 
-                .vegetarian-icon {
-                    background-image: image('/images/veggie.png');
-                }
+                    .glutenFree-icon {
+                        background-image: image('/images/nuts.png');
+                    }
+                    dd { /* text for icon */
+                        font-family:@font-swatch5-font-family;
+                        font-size:@font-swatch5-font-size;
+                        font-weight: @font-swatch5-font-weight;
+                        line-height:@font-swatch5-line-height;
+                        color: @font-swatch5-color;
+                        letter-spacing: @font-swatch5-letter-spacing;
+                        margin: 0 5px -7px;
+                    } /* end dd */
+                 
 
-                .glutenFree-icon {
-                    background-image: image('/images/nuts.png');
-                }
-
-                dd { /* text for icon */
-                    font-family:@font-swatch5-font-family;
-                    font-size:@font-swatch5-font-size;
-                    font-weight: @font-swatch5-font-weight;
-                    line-height:@font-swatch5-line-height;
-                    color: @font-swatch5-color;
-                    letter-spacing: @font-swatch5-letter-spacing;
-                    margin: 0 5px -7px;
-                } /* end dd */
-             
-
-            } /* end dl */
+                } /* end dl */
 
         } /* end menu-info */
 
@@ -786,6 +674,26 @@ footer {
     }
 
 } /* end footer */
+
+/* ===============================
+  BACK TO TOP
+   =============================== */
+
+.back-to-top {
+  text-align: center;
+  height: 66px;
+
+    a {
+        background-image: image('/images/back-to-top.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 66px;
+        text-indent: -2000px;
+        display: block;
+
+    }
+
+} /*end back-to-top */
 
 
 
