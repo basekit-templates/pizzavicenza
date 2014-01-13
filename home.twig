@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<a name="top"></a>
+
 <header>
     <div class="wrapper clearfix">
         <div class="companyheader clearfix">
@@ -18,6 +20,7 @@
 <footer>
     <div class="wrapper clearfix">
          {{widget('content', 'footercolumn1content', {"content":"<p>Lorem Ipsum Dolor</p>"})|raw}}
+         <div class="back-to-top"><a href="#top">Back to top^</a></div>
     </div>
     
 </footer>
