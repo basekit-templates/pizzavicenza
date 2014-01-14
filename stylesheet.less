@@ -330,13 +330,17 @@ header {
    =============================== */
 
 .widget.menu {
-     margin-top: 90px;
+    margin-top: 90px;
+        @media @tablet {
+        margin-top: 0;
+        }
     .main {
-        padding: 0 30px;
+        padding: 0;
         margin-bottom: 40px;
         border: 1px dotted rgba(0, 0, 0, 0.3);
             @media @tablet {
                 padding: 10px 0;
+                border: none;
             }
 
             ol, li { /* removes list-style on sections and items */
@@ -436,6 +440,7 @@ header {
         /* ITEMS */
 
             .menu-items {
+                padding: 30px;
                 -moz-column-count: 2;
                 -moz-column-gap: 50px;
                 -moz-column-rule-color: rgba(0, 0, 0, 0.2);
@@ -448,11 +453,15 @@ header {
                 -webkit-column-rule-style: dotted ;
                 -webkit-column-rule-width:  1px;
 
-                @media @mobile { 
-                   -moz-column-count: 1;
-                   -moz-column-gap: 50px;
-                   -webkit-column-count: 1;
-                   -webkit-column-gap : 50px;
+                @media @tablet {
+                    padding:0;
+                }
+
+                @media only screen and (max-width: 600px) {
+                    -moz-column-count: 1;
+                    -moz-column-gap: 50px;
+                    -webkit-column-count: 1;
+                    -webkit-column-gap : 50px;
                 }
 
                 
