@@ -338,6 +338,10 @@ header {
         padding: 0;
         margin-bottom: 40px;
         border: 1px dotted rgba(0, 0, 0, 0.3);
+        display: none;
+        &.selected {
+            display: block;
+        }
             @media @tablet {
                 padding: 10px 0;
                 border: none;
@@ -355,7 +359,7 @@ header {
 
         /* SECTION AND SUB-SECTION HEADERS */
 
-            .menu-header, .menu-section-header {
+            .menu-header, .menu-subsection-header {
                 margin-bottom: 2em;
                 text-align: center;
 
@@ -465,7 +469,7 @@ header {
                 }
 
                 
-                li { /* menu-item and menu-section-item */
+                li { /* menu-item */
                     position: relative;
                     display: block;
                     padding-bottom: 2em;
@@ -562,36 +566,54 @@ header {
                         .menu-section-item-dietary-props {
                             float: left;
                             width: 100%;
-                            margin-top: 5px;
+                            margin-top: 10px;
                             padding: 0;
                             .dietary-icon {
-                                background-color: lighten(@color-swatch6,10%);
-                                width: 25px;
+                                background-color: transparent;
+                                width: auto;
                                 height: 25px;
-                                border: 0;
-                                -webkit-border-radius: 100px;
-                                -moz-border-radius: 100px;
-                                border-radius: 100px;
-                                background-repeat: no-repeat;
-                                background-size: 19px;
-                                background-position: center;
-                                display: inline-block;
+                                border: 2px solid @color-swatch5;
+                                font-family:@font-swatch5-font-family;
+                                font-size:@font-swatch5-font-size;
+                                display: block;
+                                z-index: 9999999;
+                                color: @color-swatch5;
+                                float: left;
+                                margin-right: 5px;
                             }
                             .vegetarian-icon {
-                                background-image: image('/images/veggie-icon.png');
+                                &:after { 
+                                content: "veggie";
+                                padding: 7px;
+                                }
+                            }
+                            .vegan-icon {
+                                &:after { 
+                                content: "vegan";
+                                padding: 7px;
+                                }
                             }
                             .glutenFree-icon {
-                                background-image: image('/images/gf-icon.png');
-                              }
+                                &:after { 
+                                content: "gf";
+                                padding: 7px;
+                                }
+                            }
                             .nutFree-icon {
-                                background-image: image('/images/nutsFree.png');
+                                &:after { 
+                                content: "nf";
+                                padding: 7px;
+                                }
                               }
                             .dairyFree-icon {
-                                background-image: image('/images/dairy-icon.png');
+                                &:after { 
+                                content: "df";
+                                padding: 7px;
+                                }
                               }
                         } /* end menu-section-item-dietary-props */                        
 
-                        .menu-item-description, .menu-section-item-description {
+                        .menu-item-description, .menu-subsection-item-description {
                             margin-bottom: 0.5em;
                         }
 
@@ -706,25 +728,6 @@ footer {
 } /*end back-to-top */
 
 
-
-/* ===============================
-   IPHONE WIDTH
-   =============================== */
-
-@media only screen and (max-width: 480px) {
-
-
-
-  /* UL ALIGN RIGHT */
-
-  .widget.extendednavigation ul.align-right li.folder {
-    background-position: 12px center;
-    padding-right: 0;
-  }
-
-
-
-}
 
 @media only screen and (min-width: 1140px) {
   .wrapper {
