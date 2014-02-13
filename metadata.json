@@ -1,7 +1,7 @@
 {
     "name":"Pizza Vicenza",
-    "thumbnail":"sycamore.png",
-    "screenshot":"sycamore.png",
+    "thumbnail":"pizzavicenza.png",
+    "screenshot":"pizzavicenza.png",
     "tags": {
     "en": ["minimal", "clean", "photography", "vintage", "modern", "dark", "studio", "website", "creative", "elegant", "professional", "unique", "media", "sans-serif"],
     "es": ["minimalista", "limpio", "fotografico", "vintage", "moderno", "oscuro", "estudio", "website", "creativo", "elegante", "profesional", "unico", "comunicacion", "sans-serif"],
@@ -15,8 +15,8 @@
             "color3":"#D11920",
             "color4":"#231f20",
             "color5":"#231f20",
-            "color6":"#231f20",
-            "color7":"#ffffff"
+            "color6":"#ffffff",
+            "color7":"#4c4345"
         },
         "Swatch 2": {
             "color1":"#ffffff",
@@ -62,7 +62,7 @@
             "font-size": "22px",
             "font-weight": "400",
             "line-height": "32px",
-            "color": "@color-swatch7",
+            "color": "@color-swatch6",
             "letter-spacing": "inherit"
         },
         "font2": {
@@ -75,7 +75,7 @@
         },
         "font3": {
             "font-family": "Courier New",
-            "font-size": "20px",
+            "font-size": "18px",
             "font-weight": "600",
             "line-height": "30px",
             "color": "@color-swatch5",
@@ -91,9 +91,9 @@
         },
         "font5": {
             "font-family": "Courier New",
-            "font-size": "16px",
+            "font-size": "15px",
             "font-weight": "400",
-            "line-height": "26px",
+            "line-height": "27px",
             "color": "@color-swatch5",
             "letter-spacing": "inherit"
         },
@@ -102,18 +102,18 @@
             "font-size": "16px",
             "font-weight": "400",
             "line-height": "26px",
-            "color": "@color-swatch6",
-            "color-hover": "@color-swatch3",
+            "color": "@color-swatch5",
+            "color-hover": "@color-swatch6",
             "letter-spacing": "inherit",
             "background-color": "transparent",
             "background-color-hover": "transparent"
         },
         "font7": {
             "font-family": "Futura",
-            "font-size": "18px",
-            "font-weight": "300",
-            "line-height": "28px",
-            "color": "@color-swatch1",
+            "font-size": "14px",
+            "font-weight": "200",
+            "line-height": "26px",
+            "color": "@color-swatch6",
             "letter-spacing": "inherit",
             "background-color": "@color-swatch3",
             "background-color-hover": "darken(@color-swatch3,5%)"
@@ -139,7 +139,7 @@
             "font-size": "24px",
             "font-weight": "400",
             "line-height": "34px",
-            "color": "@color-swatch7",
+            "color": "@color-swatch5",
             "letter-spacing": "inherit"
         }
     }

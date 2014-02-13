@@ -2,13 +2,14 @@
 
 {% block content %}
 
-<a name="top"></a>
-
-<header>
+{% if pages|length > 1 %}
+{{widget('extendednavigation', 'navigationheader', {})|raw}}
+{% endif %}
+<header class="bk-header">
     <div class="wrapper clearfix">
         <div class="companyheader clearfix">
             {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
-            {{widget('companyname', 'companyname', {"business": "Pizza Vicenza"})|raw}}
+            {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
         </div>
             {{widget('menusections', 'menusections1', {})|raw}}
     </div><!--end wrapper clearfix-->
@@ -17,12 +18,10 @@
 {{widget('menu', 'menu1', {})|raw}}
        
 
-<footer>
+<footer class="bk-footer">
     <div class="wrapper clearfix">
          {{widget('content', 'footercolumn1content', {"content":"<p>Lorem Ipsum Dolor</p>"})|raw}}
-         <div class="back-to-top"><a href="#top">Back to top^</a></div>
-    </div>
-    
+    </div>   
 </footer>
 
 {% endblock %}

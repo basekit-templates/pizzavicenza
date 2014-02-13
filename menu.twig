@@ -1,30 +1,30 @@
+
 {% extends "layout.twig" %}
 
 {% block content %}
 
-<div class="bk-pt-default">
-
 {{widget('extendednavigation', 'navigationheader', {})|raw}}
 
+{% if pages|length > 1 %}
+{{widget('extendednavigation', 'navigationheader', {})|raw}}
+{% endif %}
 <header class="bk-header">
     <div class="wrapper clearfix">
         <div class="companyheader clearfix">
             {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
             {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
         </div>
+            {{widget('menusections', 'menusections1', {})|raw}}
     </div><!--end wrapper clearfix-->
 </header>
 
-<div class="main wrapper clearfix">
-    {{zone('main')|raw}}
-</div>       
+{{widget('menu', 'menu1', {})|raw}}
+       
 
 <footer class="bk-footer">
     <div class="wrapper clearfix">
          {{widget('content', 'footercolumn1content', {"content":"<p>Lorem Ipsum Dolor</p>"})|raw}}
     </div>   
 </footer>
-
-</div>
 
 {% endblock %}
