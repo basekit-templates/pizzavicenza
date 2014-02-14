@@ -10,13 +10,13 @@
     "colorSwatches":
     {
         "Swatch 1": {
-            "color1":"#d6d0c4",
+            "color1":"#ffffff",
             "color2":"#7d7872",
             "color3":"#D11920",
             "color4":"#231f20",
             "color5":"#231f20",
-            "color6":"#ffffff",
-            "color7":"#4c4345"
+            "color6":"#231f20",
+            "color7":"#d6d0c4"
         },
         "Swatch 2": {
             "color1":"#ffffff",
@@ -62,7 +62,7 @@
             "font-size": "22px",
             "font-weight": "400",
             "line-height": "32px",
-            "color": "@color-swatch6",
+            "color": "@color-swatch1",
             "letter-spacing": "inherit"
         },
         "font2": {
@@ -113,7 +113,7 @@
             "font-size": "14px",
             "font-weight": "200",
             "line-height": "26px",
-            "color": "@color-swatch6",
+            "color": "@color-swatch1",
             "letter-spacing": "inherit",
             "background-color": "@color-swatch3",
             "background-color-hover": "darken(@color-swatch3,5%)"

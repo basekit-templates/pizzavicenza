@@ -39,11 +39,16 @@ body {
    =============================== */
 
 body.edit .widget.navigation, body.edit .widget.extendednavigation {
- overflow: visible;
+    overflow: visible;
 }
 
 .bk-pt-default .bk-header {
     padding-bottom: 2em;
+}
+
+.bk-pt-default .widget.menu .main.selected {
+    width: 100%;
+    margin: 0 auto;
 }
 
 /* ===============================
@@ -56,7 +61,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
         position: relative;
         max-width: 100%;
         min-height: 40px;
-        background-color: darken(@color-swatch1,5%);
+        background-color: darken(@color-swatch7,5%);
         li {
             ul {
                 display: none !important;
@@ -73,7 +78,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
                 display: none;
                 /* Then these styles are applied */
                 width: 100%;
-                border-top: 1px solid @color-swatch2;
+                border-top: 1px solid lighten(@color-swatch2,15%);
                 margin: 0;
                 padding: 40px 0 0;
             }
@@ -84,13 +89,13 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
                 @media @tablet {
                     width: 100%;
                     padding: 1em 0;
-                    border-bottom: 1px dotted @color-swatch2;
+                    border-bottom: 1px dotted lighten(@color-swatch2,15%);
                     background-color: @color-swatch1;
                     background-image:image('/images/texture-background.png');
                 }
                 &:last-child {
                     @media @tablet {
-                        border-bottom: 1px solid @color-swatch2;
+                        border-bottom: 1px solid lighten(@color-swatch2,15%);
                     }
                 }
 
@@ -98,14 +103,14 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
                     ul {
                         display: block !important;
                         position: absolute;
-                        background-color: @color-swatch1;
+                        background-color: @color-swatch7;
                         background-image:image('/images/texture-background.png');
-                        border: 1px solid @color-swatch2;
+                        border: 1px solid lighten(@color-swatch2,15%);
                         z-index: 500;
                         padding: 0;
                         margin: 0 0 0;
                         @media @tablet {
-                            background-color: @color-swatch1;
+                            background-color: @color-swatch7;
                             background-image:image('/images/texture-background.png');
                         }
                         li {
@@ -114,7 +119,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
                                 .box-sizing {
                                     a {
                                         display: block;
-                                        color: @color-swatch5;
+                                        color: @font-swatch6-color;
                                         padding: 0;
                                     }
                                 }
@@ -139,7 +144,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
                         }
                     }
                     @media @tablet {
-                        color: @color-swatch5;
+                        color: @font-swatch6-color;
                     }
                 }
 
@@ -193,7 +198,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
                         padding: 0;
                         @media @tablet {
                             margin-top: 14px;
-                            background-color: @color-swatch1;
+                            background-color: @color-swatch7;
                             background-image:image('/images/texture-background.png');
                         }
                         li {
@@ -298,11 +303,8 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
                       text-decoration: none;
                     }
             } /* end a */
-
        } /* end companyname */
-
     } /* end company header */
-
 } /* end header */
 
 
@@ -328,7 +330,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
             list-style: none;
             padding: 0;
             @media @mobile {
-                border-top: 1px dotted @color-swatch5;
+                border-top: 1px dotted lighten(@color-swatch2,15%);
             }
             /* ALIGN CENTER */
             &.align-center {
@@ -372,7 +374,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
                 }
                 @media only screen and (max-width: 550px) {
                     width: 100%;
-                    border-bottom: 1px dotted @color-swatch5;
+                    border-bottom: 1px dotted lighten(@color-swatch2,15%);
                     padding: 15px 0 10px 0;
                 }
                 a {
@@ -380,11 +382,11 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
                     font-family:@font-swatch6-font-family;
                     font-size:@font-swatch6-font-size;
                     font-weight: @font-swatch6-font-weight;
-                    color: @font-swatch5-color;
+                    color: @font-swatch6-color;
                     line-height:@font-swatch6-line-height;
                     letter-spacing: @font-swatch6-letter-spacing;
                     &:hover {
-                        color: @font-swatch5-color;
+                        color: @font-swatch6-color;
                         text-decoration: underline;
                     }
                 }
@@ -465,10 +467,10 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
                 } /*end menu-name-background */
 
                 h2 {    
-                        color: @color-swatch7;
+                        color: @color-swatch1;
                         width: 50%;
                         position: relative;
-                        background-color: darken(@color-swatch1,10%);
+                        background-color: darken(@color-swatch2,10%);
                         text-align: center;
                         padding: 0.5em; 
                         margin: 2em auto 2em;
@@ -484,7 +486,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
                             position: absolute;
                             display: block;
                             bottom: -0.4em;
-                            border: 1.2em solid darken(@color-swatch1,15%);
+                            border: 1.2em solid darken(@color-swatch2,15%);
                         }
                         &:before {
                             left: -1.6em;
@@ -509,6 +511,9 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 
             .menu-items { 
                 padding: 0 3em;
+                @media @tablet {
+                    padding: 0;
+                }
                 -webkit-column-count: 2;
                 -webkit-column-gap: 5em;
                 -webkit-column-rule-color:  rgba(0, 0, 0, 0.2);
@@ -678,7 +683,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 
                 } /* end li */
 
-            } /* end ol */  
+            } /* end ol */ 
 
             .menu-info {
                 display: inline-block;
@@ -921,15 +926,13 @@ hr {
 
 .bk-footer {
   padding: 2em 0;
-  min-height: 150px;
   background-color: @color-swatch2;
-
     .widget.content {
         width: 100%;
         text-align: center;
 
         p {
-          color: @color-swatch6;
+          color: @color-swatch1;
         }
     }
 
