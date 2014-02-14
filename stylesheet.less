@@ -6,7 +6,7 @@ body {
 }
 
 .main {
-    border-top: 1px dotted @color-swatch5;
+    border-top: 1px dotted lighten(@color-swatch2,10%);
     padding-top: 2.5em;
     padding-right: 0;
     padding-bottom: 2.5em;
@@ -310,7 +310,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 
 
 /* ===============================
-   4. MENU SECTIONS NAVIGATION
+   MENU SECTIONS NAVIGATION
    =============================== */
 
 .widget {
@@ -427,8 +427,11 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
         /* SECTION AND SUB-SECTION HEADERS */
 
             .menu-header, .menu-subsection-header {
-                margin: 0 3em 2em;
                 text-align: center;
+                margin: 0 3em 2em;
+                @media @tablet {
+                    margin: 0;
+                }
 
                 h1 { 
                     width: 25%;
@@ -475,7 +478,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
                         padding: 0.5em; 
                         margin: 2em auto 2em;
                         @media @tablet {
-                        margin: 0 auto 2em;
+                        margin: 1em auto 2em;
                         width: 50%;
                         }
                         @media @mobile { 
@@ -689,15 +692,18 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
                 display: inline-block;
                 text-align: center;
                 width: 100%;
-                margin: 0 auto;
+                margin: 10px auto 0;
                 p { /* menu-note */
-                    margin: 0 3em 1em;
                     padding: 1em;
                     background-color: rgba(255, 255, 255, 0.2);
                     border: none;
                     -webkit-border-radius: 5px;
                     -moz-border-radius: 5px;
                     border-radius: 5px;
+                    margin: 0 3em 1em;
+                    @media @tablet {
+                        margin: 0;
+                    }
                 }
 
         } /* end menu-info */
@@ -817,10 +823,20 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
             -webkit-border-radius: 4px;
             -moz-border-radius: 4px;
             border-radius: 4px;
+            left: 45%;
+            top: 43%;
             &:after {
                 color: #fff;
                 letter-spacing: -4px;
                 top: 2px;
+            }
+            @media @mobile {
+                width: 40px;
+                height: 40px;
+                &:after {
+                    font-size: 15px;
+                    line-height: 36px;
+                }
             }
         }
     }
@@ -833,7 +849,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
             -moz-border-radius: 50%;
             border-radius: 50%;
             &.selected {
-                background-color: @color-swatch5;
+                background-color: @color-swatch3;
             }
         }
     }
@@ -907,6 +923,15 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
     }
 }
 
+/* ===============================
+  IMAGE WIDGET
+   =============================== */
+
+.widget.image {
+    .image-title, .image-description {
+    color: @font-swatch5-color;
+    }
+}
 
 /* ===============================
   DIVIDER WIDGET
@@ -914,8 +939,9 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 
 hr {
     &.line {
-        background-color: @color-swatch5;
+        background-color: transparent;
         height: 1px;
+        border-top: 1px dotted lighten(@color-swatch2,10%);
     }
 }
 
