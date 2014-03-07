@@ -423,6 +423,9 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
                 padding: 0;
                 margin: 0;
             } 
+            .menu-subsection ol .menu-item-promoted:after {
+                top: -5%;
+            }
 
         /* SECTION AND SUB-SECTION HEADERS */
 
@@ -517,41 +520,15 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
                 @media @tablet {
                     padding: 0;
                 }
-                -webkit-column-count: 2;
-                -webkit-column-gap: 5em;
                 -webkit-column-rule-color:  rgba(0, 0, 0, 0.2);
                 -webkit-column-rule-style: dotted;
                 -webkit-column-rule-width:  1px;
-
-                -moz-column-count: 2;
-                -moz-column-gap: 5em; 
                 -moz-column-rule-color: rgba(0, 0, 0, 0.2);
                 -moz-column-rule-style:  dotted;
                 -moz-column-rule-width:  1px;
-
-                column-count: 2;
-                column-gap: 5em;
                 column-rule-color:  rgba(0, 0, 0, 0.2);
                 column-rule-style: dotted;
                 column-rule-width:  1px;
-
-                > * {
-                    break-inside: avoid;
-                    -webkit-column-break-inside: avoid;
-                    -moz-column-break-inside: avoid;
-                    -ms-column-break-inside: avoid;
-                    -o-column-break-inside: avoid;
-                }
-                @media only screen and (max-width: 600px) {
-                    -webkit-column-count: 1;
-                    -moz-column-count: 1;
-                    column-count: 1;
-                }
-                &.odd.bk1-columns {
-                    -webkit-column-count: 1;
-                    -moz-column-count: 1;
-                    column-count: 1;
-                }
                 
                 li { /* menu-item */
                     position: relative;
@@ -563,13 +540,12 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
                     @media @mobile { 
                         margin-bottom: 0;
                         padding: 1em 0;
-
                     }
                     &.menu-item-promoted {
                             display: inline-block; 
                             background-color: rgba(255, 255, 255, 0.2);
                             padding: 1.5em 1em;
-                            margin-top: 1.5em;
+                            margin: 1.5em 0;
                             border: none;
                             -webkit-border-radius: 5px;
                             -moz-border-radius: 5px;
