@@ -12,12 +12,10 @@
             {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
             {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
         </div>
-            {{widget('menusections', 'menusections1', {})|raw}}
     </div><!--end wrapper clearfix-->
 </header>
 
-{{widget('menu', 'menu1', {})|raw}}
-       
+{{zone('main')|raw}}
 
 <footer class="bk-footer">
     <div class="wrapper clearfix">
