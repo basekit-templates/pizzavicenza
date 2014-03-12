@@ -100,7 +100,7 @@
         "font6": {
             "font-family": "\"Courier New\", monospace",
             "font-size": "16px",
-            "font-weight": "400",
+            "font-weight": "600",
             "line-height": "26px",
             "color": "@color-swatch5",
             "color-hover": "@color-swatch6",
