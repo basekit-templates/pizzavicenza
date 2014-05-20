@@ -2,6 +2,7 @@
     "name":"Pizza Vicenza",
     "thumbnail":"pizzavicenza.png",
     "screenshot":"pizzavicenza.png",
+    "templateType":"menu",
     "tags": {
     "en": ["wooden", "clean", "italian", "plain", "simple", "food", "restaurant", "menu", "pizza", "sans-serif"],
     "es": ["menú", "cafetería", "bar", "restaurante"],
